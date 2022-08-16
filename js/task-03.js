@@ -18,8 +18,8 @@ const ulContainer = document.querySelector('ul')
 const makeGalleryMarkup = images => {
  const {url, alt} = images
   return `
-  <li>
- <img src="${url}" alt="${alt}">
+  <li >
+ <img class="gallery__img" src="${url}" alt="${alt}">
  </li>` 
 }
 
