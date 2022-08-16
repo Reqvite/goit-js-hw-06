@@ -13,19 +13,20 @@ const images = [
   },
 ];
 
-const ulContainer = document.querySelector('ul')
+const ulContainer = document.querySelector('ul');
+ulContainer.style.display = 'grid';
+ulContainer.style.gap = '25px';
 
 const makeGalleryMarkup = images => {
- const {url, alt} = images
+  const { url, alt } = images
   return `
   <li >
  <img class="gallery__img" src="${url}" alt="${alt}">
- </li>` 
-}
+ </li>`
+};
 
 const makeGallery = images.map(makeGalleryMarkup).join(' ');
 
-ulContainer.insertAdjacentHTML("afterbegin", makeGallery)
-
+ulContainer.insertAdjacentHTML("afterbegin", makeGallery);
 
 
