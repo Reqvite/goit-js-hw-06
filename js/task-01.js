@@ -6,6 +6,5 @@ const categoriesNameRef = document.querySelectorAll('h2')
 categoriesNameRef.forEach(element => {
     console.log(`Category: ${element.textContent}`)
     console.log(`Elements: ${element.nextElementSibling.children.length}`);
-
 } )
 
