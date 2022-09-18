@@ -5,27 +5,20 @@ const refs = {
   boxesContainer: document.querySelector('#boxes'),
 }
 
-let amount = 0
-refs.input.addEventListener('input', (event) => {
-    amount = event.currentTarget.value
-})
-refs.buttonCreate.addEventListener('click', () => {
-  createBoxes(amount)  
-})
+refs.buttonCreate.addEventListener('click', createBoxes)
 refs.buttonDestroy.addEventListener('click', () => {
   refs.boxesContainer.innerHTML = ''
 })
 
-let boxSize = 30;
-
-function createBoxes(amount) {
-  for (let i = 1, boxSize = 30 ; i <= amount; i += 1, boxSize +=10) {
-
+let saveSize = 30;
+function createBoxes() {
+  for (let i = 1, boxSize = saveSize; i <= Number(refs.input.value); i += 1, boxSize +=10) {
   const newBox = document.createElement('div');
   newBox.style.width = `${boxSize}px`;
     newBox.style.height = `${boxSize}px`;
     newBox.style.backgroundColor = getRandomHexColor();
     refs.boxesContainer.append(newBox)
+    saveSize = boxSize
 } 
 }
 
