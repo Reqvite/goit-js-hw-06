@@ -7,7 +7,8 @@ const refs = {
 
 refs.buttonCreate.addEventListener('click', createBoxes)
 refs.buttonDestroy.addEventListener('click', () => {
-  refs.boxesContainer.innerHTML = ''
+  refs.boxesContainer.innerHTML = '';
+  saveSize = 30;
 })
 
 let saveSize = 30;
@@ -18,7 +19,7 @@ function createBoxes() {
     newBox.style.height = `${boxSize}px`;
     newBox.style.backgroundColor = getRandomHexColor();
     refs.boxesContainer.append(newBox)
-    saveSize = boxSize
+    saveSize = boxSize + 10;
 } 
 }
 
